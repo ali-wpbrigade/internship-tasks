@@ -4,6 +4,8 @@ $name=$lname=$email=$gender=$addresserr=$phoneerr=$RepeatPassworderr=$passworder
 if($_SERVER['REQUEST_METHOD']== "POST")
 {
 
+    //comment
+
 //firstname:
 if(empty(htmlspecialchars($_REQUEST['name']))){
  $nameerr=" FIRSTNAME FIELD IS REQUIRED";
