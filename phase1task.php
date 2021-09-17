@@ -191,7 +191,7 @@ else{
 
 }
 //gender:
-if(empty(htmlspecialchars($_REQUEST['gender']))){
+if(empty($_REQUEST['gender'])){
 
     $gendererr="please select your gender";
     
@@ -204,10 +204,18 @@ if(empty(htmlspecialchars($_REQUEST['gender']))){
     
         $gender=check_validity(htmlspecialchars($_REQUEST['gender']));
     }
-if (empty(htmlspecialchars($_REQUEST['agreeterms']))) {
+if (empty($_REQUEST['agreeterms'])) {
     // code...
-    $agrerr="please accept terms first check the box";
+ $agrerr="please accept terms first check the box";
 }
+
+if(!empty($_REQUEST['gender'])){
+
+    echo"YOUR RECORD SUBMITTED SUCCESSFULLY";
+    
+    
+    
+    }
 
 }
 
@@ -241,7 +249,12 @@ return $data;
 </style>
     <meta charset="utf-8">
     <title>form handling</title>
-    <form method="post" action="<?php  echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+    
+</head>
+<body>
+<fieldset>
+<legend>Registeration form</legend>
+<form method="post" action="<?php  echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
         
 
 
@@ -286,8 +299,6 @@ I agree to the terms:<input type="checkbox" name="agreeterms"  checked >
 
 <input type="reset" >
     </form>
-</head>
-<body>
-
+    </fieldset>
 </body>
 </html>
