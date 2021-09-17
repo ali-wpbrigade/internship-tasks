@@ -148,7 +148,7 @@ else{
 
 
   
-if (strlen(  $Password)<6 || strlen( $Password)>20) {
+if (strlen( $Password)<6 || strlen( $Password)>20) {
     // code...
       $passworderr="length is notvalid plese choose min:6,max:20 ";
  }
@@ -183,7 +183,7 @@ else{
     filter_var($RepeatPassword,FILTER_SANITIZE_STRING);
     if ($RepeatPassword!=$Password) {
         // code...
-        $RepeatPassworderr="password doed not match";
+        $RepeatPassworderr="password doed not match please try again";
 
     }
    
@@ -211,7 +211,7 @@ if (empty($_REQUEST['agreeterms'])) {
 
 if(!empty($_REQUEST['gender'])){
 
-    echo"YOUR RECORD SUBMITTED SUCCESSFULLY";
+    echo"<h1>YOUR RECORD SUBMITTED SUCCESSFULLY<h1>";
     
     
     
@@ -275,12 +275,12 @@ email:<br>
 
 
 Password:<br>
-<input type="password" name="actualPassword" value="<?php echo $password;?>"> <span class="error">* <?php echo  $passworderr;?></span><br>
+<input type="password" name="actualPassword"> <span class="error">* <?php echo  $passworderr;?></span><br>
 
 
 
 RepeatPassword:<br>
-<input type="password" name="RepeatPassword" value="<?php echo $RepeatPassword;?>"> <span class="error">* <?php echo  $RepeatPassworderr;?></span><br>
+<input type="password" name="RepeatPassword" > <span class="error">* <?php echo  $RepeatPassworderr;?></span><br>
 
 
 gender:
