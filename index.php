@@ -8,7 +8,7 @@ $phone_err = "";
 $Repeat_Password_err = "";
 $password_err = "";
 $agr_err = "";
-$gendererr = "";
+$gender_err = "";
 
 $address = "";
 $phone = "";
@@ -21,8 +21,6 @@ $email = "";
 $gender = "";
 
 if( $_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['btn_submit']) ) {
-    
-
 
     //firstname
 
@@ -192,7 +190,7 @@ if ( empty($_REQUEST['gender']) ) {
 }
 
 if( !empty($_REQUEST['gender']) )   {
-    echo"<h1>YOUR RECORD SUBMITTED SUCCESSFULLY<h1>"; 
+    echo"<h1>YOUR RECORD SUBMITTED SUCCESSFULLY</h1>"; 
 
     }
 
@@ -242,7 +240,8 @@ RepeatPassword:<br>
 gender:
     <input type="radio" name="gender"  <?php if(isset($gender) && $gender=="male") echo "checked" ;?> value="male">male
     <input type="radio" name="gender" <?php  if(isset($gender)&&$gender=="female" ) echo "checked";?> value="female">female
-    <span class="error">* <?php echo  $gendererr;?></span><br><br>
+    
+    <span class="error">* <?php echo  $gender_err;?></span><br><br>
 
 I agree to the terms:
 
