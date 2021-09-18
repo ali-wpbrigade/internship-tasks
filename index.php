@@ -33,7 +33,7 @@ else {
 
     if ( !preg_match("/^[a-zA-Z-' ]*$/",$name) )  {
 
-    $nameerr=" FIRSTNAME FIELD IS not valid";
+        $name_err=" FIRSTNAME FIELD IS not valid";
 
     }
 
