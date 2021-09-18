@@ -8,10 +8,11 @@ if($_SERVER['REQUEST_METHOD']== "POST")
 
 //firstname:
 if(empty(htmlspecialchars($_REQUEST['name']))){
+    
  $nameerr=" FIRSTNAME FIELD IS REQUIRED";
 
 }
-
+//check
 else{
 
     $name=check_validity(htmlspecialchars($_REQUEST['name']));
