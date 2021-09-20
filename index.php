@@ -158,8 +158,8 @@ else{
 
 	if ( strlen( $Password)<6 || strlen( $Password)>20 ) {
     // code...
-	$password_err="length is notvalid plese choose min:6,max:20 ";
-	$err = true;
+		$password_err="length is notvalid plese choose min:6,max:20 ";
+		$err = true;
 	}
 
 }
@@ -168,8 +168,8 @@ else{
 
 if( empty($_REQUEST['RepeatPassword'] ) ) {
 
-$Repeat_Password_err=" Repeat password FIELD IS REQUIRED";
-$err = true;
+	$Repeat_Password_err=" Repeat password FIELD IS REQUIRED";
+	$err = true;
 
 }
 
@@ -178,8 +178,8 @@ else{
   
 	if ( $RepeatPassword!= $_REQUEST['actualPassword'] ) {
 	// code...
-	$Repeat_Password_err="password doed not match please try again";
-	$err = true;
+		$Repeat_Password_err="password doed not match please try again";
+		$err = true;
 
 	}
    
@@ -200,8 +200,8 @@ else{
 //agree terms:
 if ( empty( $_REQUEST['agreeterms'] ) ) {
 // code...
-$agr_err="please accept terms first check the box";
-$err = true;
+	$agr_err="please accept terms first check the box";
+	$err = true;
 }
 
 if( $err === false )   {
