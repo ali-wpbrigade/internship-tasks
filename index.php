@@ -23,10 +23,14 @@ $gender = "";
 
 if( isset($_POST['btn_submit']) ) {
 
-	if( empty( $_REQUEST['name'] ) ) {
+	//firtstname
+	if( empty(trim($_REQUEST['name']) )   ) {
 
 		$name_err=" First Name Field is Required";
 		}else{
+
+
+			
 		$name=check_validity( $_REQUEST['name'] );
 		if( !preg_match( "/^[a-zA-Z-' ]*$/",$name ) ){
 
@@ -42,7 +46,8 @@ if( isset($_POST['btn_submit']) ) {
 
 
 	//LASTNAME:
-	if( empty( $_REQUEST['lname'] ) ) {
+	if( empty( trim($_REQUEST['lname']) ) ) {
+
 	$lname_err=" Last Name Field is Required";
 	$err = true;
 	}else{
@@ -68,6 +73,7 @@ if( isset($_POST['btn_submit']) ) {
 		$err = true;
 	}else {
 		$email=check_validity( $_REQUEST['email'] );
+		
 		if(!filter_var( $email,FILTER_VALIDATE_EMAIL ) ) {
 		$email_err=" Email Field iS Not Valid";
 		$err = true;
@@ -172,6 +178,8 @@ if( isset($_POST['btn_submit']) ) {
 
 	//function:
 	function check_validity( $data ) {
+		$data=str_replace(" ","",$data);
+		
 		$data=trim( $data );
 		$data=stripslashes( $data );
 		$data=htmlspecialchars( $data );
