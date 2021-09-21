@@ -239,14 +239,12 @@ if( isset( $_POST['btn_submit'] ) ) {
 			$gender = $_POST['gender'] ;
 		}
 	//agree terms:
-	if( isset( $_POST['agreeterms'] ) ) {
-
-		if( empty( $_POST['agreeterms'] ) ) {
+	if( empty( $_POST['agreeterms'] ) ) {
 			$agr_err="please accept terms first check the box";
 			$err = true;
 
-		}
 	}
+	
 	
 	// Collect Response if, Not any Error occur
 	if(  ! $err ) {
