@@ -136,10 +136,12 @@ if( isset( $_POST['btn_submit'] ) ) {
 			//if length is less then 10
 			if(strlen($address)<10){
 				$address_err = "Length is too short";
+				$err = true;
 			}
 			//if length is more then 50
 			elseif( strlen( $address )>50 ) {
 				$address_err ="Length is too long";
+				$err = true;
 
 			}
 
@@ -308,6 +310,7 @@ Phone:<br>
 Password:<br>
     <input type="password" name="actualPassword"> 
 	<span class="error">* <?php echo  $password_err; ?></span><br>
+
 
 RepeatPassword:<br>
     <input type="password" name="RepeatPassword" > 
